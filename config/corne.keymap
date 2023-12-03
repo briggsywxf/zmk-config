@@ -63,7 +63,7 @@
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
    &trans &kp F1 &kp F2 &kp F3 &kp F4 &trans                 &trans   &trans    &trans    &trans  &trans &kp BSPC
-   &kp LCTRL &kp F5 &kp F6 &kp F7 &kp F8 &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &kp EP_TOG
+   &kp LCTRL &kp F5 &kp F6 &kp F7 &kp F8 &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &ext_power EP_TOG
    &kp LSHFT &kp F9 &kp F10 &kp F11 &kp F12 &trans              &trans   &trans    &trans    &trans  &trans &trans
                              &kp LGUI &kp ESC &lt 1 SPACE    &lt 2 BSPC &kp RET &kp RALT
                         >;
