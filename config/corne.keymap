@@ -14,7 +14,7 @@
 behaviors {
 clt: custom_layer_tap {
          compatible = "zmk,behavior-hold-tap";
-         label = "SPACE_LAYER_TAP";
+         label = "CUSTOM_LAYER_TAP";
          #binding-cells = <2>;
          flavor = "balanced";
          tapping-term-ms = <200>;
@@ -22,6 +22,18 @@ clt: custom_layer_tap {
          global-quick-tap;
          bindings = <&mo>, <&kp>;
          };
+
+cmt: custom_mod_tap {
+         compatible = "zmk,behavior-hold-tap";
+         label = "CUSTOM_MOD_TAP";
+         #binding-cells = <2>;
+         flavor = "balanced";
+         tapping-term-ms = <200>;
+         quick-tap-ms = <125>;
+         global-quick-tap;
+         bindings = <&kp>, <&kp>;
+         };
+
      };
 
         keymap {
@@ -30,27 +42,27 @@ clt: custom_layer_tap {
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | ESC |SPC/1|   |BSPC/2| ENT/3  | ALT |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
+//                    | GUI | ESC/SHFT |SPC/1|   |BSPC/2| ENT/CTRL  | ALT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                  &kp LGUI &kp ESC &clt 1 SPACE   &clt 2 BSPC &lt 3 RET &kp RALT
+      &kp LGUI &cmt LSHFT ESC &clt 1 SPACE   &clt 2 BSPC &cmt RCTRL RET &kp LALT
                         >;
                 };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8  |  9  |  0  | BKSP |
-// | CTRL |     |     |     |     |     |   | LFT | DWN  | UP  | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |      |     |     |     | SHFT |
+// | SHFT |     |     |     |     |     |   | LFT | DWN  | UP  | RGT |     |      |
+// | CTRL |     |     |     |     |     |   |     |      |     |     |     | SHFT |
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
    &kp TAB   &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &kp LCTRL &trans &trans &trans &trans &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT &trans &trans &trans &trans &trans   &trans   &trans   &trans &trans    &trans &trans
+   &kp LSHFT &trans &trans &trans &trans &trans   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
+   &kp LCTRL &trans &trans &trans &trans &trans   &trans   &trans   &trans &trans    &trans &trans
                   &kp LGUI &kp ESC &clt 1 SPACE   &clt 2 BSPC &kp RET &kp RALT
                         >;
                 };
@@ -58,13 +70,13 @@ clt: custom_layer_tap {
                 raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |  ~  |  £  |  /  |  {  |  [  |   |  ]  |  }  |  \  |  -  |  +  | "|"  |
-// | SHFT |     |     |     |     |     |   |     |     |     |  _  |  =  | SHFT |
+// | SHFT |  ~  |  £  |  /  |  {  |  [  |   |  ]  |  }  |  \  |  -  |  +  | "|"  |
+// | CTRL |     |     |     |     |     |   |     |     |     |  _  |  =  | SHFT |
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
    &kp GRAVE &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp TILDE &kp NUHS &kp FSLH &kp LBRC &kp LBKT    &kp RBKT  &kp RBRC  &kp BSLH        &kp MINUS &kp PLUS &kp PIPE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans         &trans    &trans    &trans          &kp UNDER &kp EQUAL &kp RSHFT
+   &kp LSHFT &kp TILDE &kp NUHS &kp FSLH &kp LBRC &kp LBKT    &kp RBKT  &kp RBRC  &kp BSLH        &kp MINUS &kp PLUS &kp PIPE
+   &kp LCTRL &trans   &trans &trans   &trans   &trans         &trans    &trans    &trans          &kp UNDER &kp EQUAL &kp RSHFT
                              &kp LGUI &kp ESC &clt 1 SPACE    &clt 2 BSPC &kp RET &kp RALT
                         >;
                 };
@@ -72,13 +84,13 @@ clt: custom_layer_tap {
                 fn_layer {
 // -----------------------------------------------------------------------------------------
 // |  `   | F1  | F2  | F3  | F4  |     |   |     |     |     |     |     | BKSP |
-// | CTRL | F5  | F6  | F7  | F8  |     |   |HOME |PGUP | PGDN| END |EP_ON  | EP_OFF  |
-// | SHFT | F9  | F10 | F11 | F12 |     |   |BT_CLR|BT_PRV|BT_NXT|     |     | SHFT |
+// | SHFT | F5  | F6  | F7  | F8  |     |   |HOME |PGUP | PGDN| END |EP_ON  | EP_OFF  |
+// | CTRL | F9  | F10 | F11 | F12 |     |   |BT_CLR|BT_PRV|BT_NXT|     |     | SHFT |
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
    &trans &kp F1 &kp F2 &kp F3 &kp F4 &trans                 &trans   &trans    &trans    &trans  &trans &kp BSPC
-   &kp LCTRL &kp F5 &kp F6 &kp F7 &kp F8 &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &ext_power EP_ON &ext_power EP_OFF
-   &kp LSHFT &kp F9 &kp F10 &kp F11 &kp F12 &trans              &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans  &trans &trans
+   &kp LSHFT &kp F5 &kp F6 &kp F7 &kp F8 &trans                 &kp HOME &kp PG_DN &kp PG_UP &kp END &ext_power EP_ON &ext_power EP_OFF
+   &kp LCTRL &kp F9 &kp F10 &kp F11 &kp F12 &trans              &bt BT_CLR &bt BT_PRV &bt BT_NXT &trans  &trans &trans
                              &kp LGUI &kp ESC &clt 1 SPACE    &clt 2 BSPC &kp RET &kp RALT
                         >;
                 };
