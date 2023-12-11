@@ -17,8 +17,8 @@ clt: custom_layer_tap {
          label = "CUSTOM_LAYER_TAP";
          #binding-cells = <2>;
          flavor = "balanced";
-         tapping-term-ms = <175>;
-         quick-tap-ms = <100>;
+         tapping-term-ms = <200>;
+         quick-tap-ms = <125>;
          global-quick-tap;
          bindings = <&mo>, <&kp>;
          };
@@ -83,9 +83,9 @@ cmt: custom_mod_tap {
 
                 fn_layer {
 // -----------------------------------------------------------------------------------------
-// |  `   | F1  | F2  | F3  | F4  |     |   |HOME |PGDN | PGUP| END |     | BKSP |
-// | TAB  | F5  | F6  | F7  | F8  |     |   |LEFT |DN   |UP   |RIGHT|    |     |
-// |      | F9  | F10 | F11 | F12 |     |   |BT_CLR|BT_PRV|BT_NXT| EP_ON  |  EP_OFF | SHFT |
+// |  `   | F1  | F2  | F3  | F4  |     |   |HOME  |PGDN  | PGUP | END |    | BKSP |
+// | TAB  | F5  | F6  | F7  | F8  |     |   |LEFT  |DN    |UP    |RIGHT|    |     |
+// |      | F9  | F10 | F11 | F12 |     |   |BT_CLR|BT_PRV|BT_NXT| EP_ON|  EP_OFF |     |
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
    &trans &kp F1 &kp F2 &kp F3 &kp F4 &trans                    &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &kp BSPC
