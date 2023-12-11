@@ -17,8 +17,8 @@ clt: custom_layer_tap {
          label = "CUSTOM_LAYER_TAP";
          #binding-cells = <2>;
          flavor = "balanced";
-         tapping-term-ms = <200>;
-         quick-tap-ms = <125>;
+         tapping-term-ms = <175>;
+         quick-tap-ms = <100>;
          global-quick-tap;
          bindings = <&mo>, <&kp>;
          };
@@ -28,8 +28,8 @@ cmt: custom_mod_tap {
          label = "CUSTOM_MOD_TAP";
          #binding-cells = <2>;
          flavor = "balanced";
-         tapping-term-ms = <200>;
-         quick-tap-ms = <125>;
+         tapping-term-ms = <175>;
+         quick-tap-ms = <100>;
          global-quick-tap;
          bindings = <&kp>, <&kp>;
          };
