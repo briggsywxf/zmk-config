@@ -39,20 +39,19 @@ cmt: custom_mod_tap {
         keymap {
                 compatible = "zmk,keymap";
 
-                default_layer {
+                                default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | BKSP |
-// | SHFT |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |  '   |
-// | CTRL |  Z  |  X  |  C  |  D  |  V  |   |  K  |  H   |  ,  |  .  |  /  | SHFT |
+// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
+// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
+// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
 //                    | GUI | ESC/SHFT |SPC/1|   |BSPC/2| ENT/CTRL  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp BSPC
-   &kp LSHFT &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
       &kp LGUI &cmt LSHFT ESC &clt 1 SPACE   &clt 2 BSPC &cmt RCTRL RET &kp LALT
                         >;
                 };
-
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7   |  8  |  9  |  0  | BKSP |
@@ -88,23 +87,10 @@ cmt: custom_mod_tap {
 // | CTRL | F9  | F10 | F11 | F12 |     |   |BT_CLR|BT_PRV|BT_NXT| EP_ON  |  EP_OFF | SHFT |
 //                    | GUI | ESC |SPC/1|   |BSPC/2| ENT  | ALT |
                         bindings = <
-   &trans &kp F1 &kp F2 &kp F3 &kp F4 &trans                    &kp HOME &kp PG_DN &kp PG_UP &kp END &tog 4 &kp BSPC
+   &trans &kp F1 &kp F2 &kp F3 &kp F4 &trans                    &kp HOME &kp PG_DN &kp PG_UP &kp END &trans &kp BSPC
    &kp LSHFT &kp F5 &kp F6 &kp F7 &kp F8 &trans                 &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans 
    &kp LCTRL &kp F9 &kp F10 &kp F11 &kp F12 &trans              &bt BT_CLR &bt BT_PRV &bt BT_NXT &ext_power EP_ON &ext_power EP_OFF &trans
                          &kp LGUI &kp ESC &clt 1 SPACE    &clt 2 BSPC &kp RET &kp RALT
-                        >;
-                };
-                qwerty_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | ESC/SHFT |SPC/1|   |BSPC/2| ENT/CTRL  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-      &kp LGUI &cmt LSHFT ESC &clt 1 SPACE   &clt 2 BSPC &cmt RCTRL RET &kp LALT
                         >;
                 };
         };
